@@ -90,14 +90,18 @@ c)
    sudo nano /srv/salt/pkg_htop.sls
 
    Lisäsin sisällön -
+
    install_htop:
-  pkg.installed:
+
+pkg.installed:
+    
     - name: htop
   
    Ajoin Salt staten -
    sudo salt-call state.apply pkg_htop
 
    Tatkistin asennuksen -
+   
    dpkg -l | grep htop
 
    2. file käytetään tiedostojen hallintaan
@@ -110,17 +114,25 @@ c)
 
       Tiedoston sisältö:
 
+   
    /tmp/moi.txt:
+  
   file.managed:
+    
     - contents: "Moi kaikki!"
+    
     - mode: '0644'
+   
     - owner: root
+    
     - group: root
   
       sudo salt-call state.apply file_esimerkki
 
       Tarkistin tuloksen:
+      
       cat /tmp/moi.txt
+      
       ls -l /tmp/moi.txt
 
       3. service käytetään palveluiden hallintaan
@@ -134,8 +146,11 @@ c)
          Tiedoston sisältö:
 
          ssh_service:
+         
          service.running:
+         
          - name: ssh
+         
          - enable: true
         
            Salt staten ajo:
@@ -156,15 +171,22 @@ c)
          sudo nano /srv/salt/user_käyttäjä1.sls
 
          Tiedoston sisältö:
+      
       devuser_account:
+      
       user.present:
+   
     - name: devuser
+    
     - uid: 1500
+    
     - groups:
       - sudo
+    
     - shell: /bin/bash
   
       Salt state ajo:
+     
       sudo salt-call state.apply user_käyttäjä1
 
       Käyttäjän tarkistus:
@@ -179,15 +201,21 @@ c)
          sudo nano /srv/salt/cmd_komento.sls
 
          Tiedoston sisältö:
+        
          create_demo_dir:
+        
          cmd.run:
+        
          - name: mkdir -p /opt/demo
+        
          - unless: test -d /opt/demo
         
          Salt staten ajo:
+         
          sudo salt-call state.apply cmd_komento
 
          Tarkistin tuloksen:
+         
          ls -ld /opt/demo
 
 
@@ -196,21 +224,31 @@ c)
       Esimerkki:
       Loin 2 uutta tiedostoa
       Ensimmäinen on /srv/salt/idempotent_pkg.sls jonka sisältö on:
+     
       install_tree:
+      
        pkg.installed:
+       
        - name: tree
 
      Toinen on /srv/salt/idempotent_file.sls jonka sisältö on:
+     
      /tmp/mitä.txt:
+     
      file.managed:
+    
     - contents: "Mitä kuuluu"
+    
     - mode: '0644'
+    
     - owner: root
+    
     - group: root
   
       Kun olin luonut tiedostot ajoin seuraavat komennot:
 
      sudo salt-call --local state.apply idempotent_pkg
+     
      sudo salt-call --local state.apply idempotent_file
 
      Ensimmäisellä ajokerralla:
