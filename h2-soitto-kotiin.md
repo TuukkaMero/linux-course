@@ -81,3 +81,5 @@ Asennuksessa ei ollut ongelmia
 Asennuksen tarkistus:
 
 ![VirtualBox asennus](https://raw.githubusercontent.com/TuukkaMero/linux-course/main/Vbox%20versio.png)
+
+![Vagrant asunnus](https://github.com/TuukkaMero/linux-course/blob/main/Vagrant%20asennus.png)
