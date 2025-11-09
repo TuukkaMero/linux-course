@@ -83,3 +83,17 @@ Asennuksen tarkistus:
 ![VirtualBox asennus](https://raw.githubusercontent.com/TuukkaMero/linux-course/main/Vbox%20versio.png)
 
 ![Vagrant asunnus](https://github.com/TuukkaMero/linux-course/blob/main/Vagrant%20asennus.png)
+
+## b) 
+
+Tein uuden linux viertuaalikoneen seuraavalla tavalla:
+
+![1kone](https://github.com/TuukkaMero/linux-course/blob/main/1%20Koneen%20asennus.png)
+
+Koneen sisältö:
+
+![1kone](https://github.com/TuukkaMero/linux-course/blob/main/1%20koneen%20sis%C3%A4lt%C3%B6.png)
+
+## c)
+
+
