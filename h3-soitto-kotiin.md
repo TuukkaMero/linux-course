@@ -150,7 +150,7 @@ Kokeilin ajamista n. tunnin ajan mutta sain jatkuvasti virheen joka näytti täl
 
 Juuri aikaisemmin minionin pingaus masterilta oli kuitenkin onnistunut joten en nähnyt mitään syytä miksi se ei tomisi nyt
 
-Lopetin olettaen että ratkaisuni olisi pitänyt tomia mutta ongelma oli tällä kertaa itse vagrantissa
+Lopetin olettaen että ratkaisuni olisi pitänyt toimia mutta ongelma oli tällä kertaa itse vagrantissa
 
 ## Lähteet
 
