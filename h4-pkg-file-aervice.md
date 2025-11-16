@@ -101,29 +101,29 @@ Failed:    0
 
 ## Tiivistelmä
 
-Asennettiin SSH-palvelin
+1. SSH-palvelin asennus
 
-Saltilla asennettiin openssh-server paketti
+- Saltilla asennettiin openssh-server paketti
 
-Hallittiin SSH-konfiguraatiota
+2. SSH-konfiguraation hallinta
 
-sshd_config-tiedosto kopioitiin Saltin hallinnoimasta lähteestä (file.managed) oikeaan paikkaan /etc/ssh/sshd_config.
+- sshd_config-tiedosto kopioitiin Saltin hallinnoimasta lähteestä (file.managed) oikeaan paikkaan /etc/ssh/sshd_config.
 
-Asetettiin omistaja (root), ryhmä ja tiedostolle oikeudet (600).
+- Asetettiin omistaja (root), ryhmä ja tiedostolle oikeudet (600).
 
-Määriteltiin, että palvelu käynnistetään uudelleen automaattisesti, jos tiedosto muuttuu (watch_in).
+- Määriteltiin, että palvelu käynnistetään uudelleen automaattisesti, jos tiedosto muuttuu (watch_in).
 
-Varmistettiin SSH-palvelun käynnissäolo
+3. SSH-palvelun käynnissäolon varmistus
 
-ssh-palvelu asetettiin käynnistymään ja pysymään käynnissä (service.running).
+- ssh-palvelu asetettiin käynnistymään ja pysymään käynnissä (service.running).
 
-Salt huolehti, että palvelu käynnistyy tarvittaessa uudelleen konfiguraatiomuutosten jälkeen.
+- Salt huolehti, että palvelu käynnistyy tarvittaessa uudelleen konfiguraatiomuutosten jälkeen.
 
-Idempotenssin testaus
+4. Idempotenssin testaus
 
-Saltin tila voidaan ajaa useaan kertaan ilman, että järjestelmä muuttuisi turhaan.
+- Saltin tila voidaan ajaa useaan kertaan ilman, että järjestelmä muuttuisi turhaan.
 
-Ensimmäinen ajokerta voi asentaa paketin ja kopioida tiedoston; myöhemmät ajot eivät tee muutoksia, jos kaikki on jo oikein.
+- Ensimmäinen ajokerta voi asentaa paketin ja kopioida tiedoston; myöhemmät ajot eivät tee muutoksia, jos kaikki on jo oikein.
 
 
  ## Lähteet 
