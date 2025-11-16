@@ -99,6 +99,32 @@ Failed:    0
 -------------
  Tilani korjasi puutteet joten idempotenssi on saavutettu
 
+## Tiivistelmä
+
+Asennettiin SSH-palvelin
+
+Saltilla asennettiin openssh-server paketti
+
+Hallittiin SSH-konfiguraatiota
+
+sshd_config-tiedosto kopioitiin Saltin hallinnoimasta lähteestä (file.managed) oikeaan paikkaan /etc/ssh/sshd_config.
+
+Asetettiin omistaja (root), ryhmä ja tiedostolle oikeudet (600).
+
+Määriteltiin, että palvelu käynnistetään uudelleen automaattisesti, jos tiedosto muuttuu (watch_in).
+
+Varmistettiin SSH-palvelun käynnissäolo
+
+ssh-palvelu asetettiin käynnistymään ja pysymään käynnissä (service.running).
+
+Salt huolehti, että palvelu käynnistyy tarvittaessa uudelleen konfiguraatiomuutosten jälkeen.
+
+Idempotenssin testaus
+
+Saltin tila voidaan ajaa useaan kertaan ilman, että järjestelmä muuttuisi turhaan.
+
+Ensimmäinen ajokerta voi asentaa paketin ja kopioida tiedoston; myöhemmät ajot eivät tee muutoksia, jos kaikki on jo oikein.
+
 
  ## Lähteet 
 
