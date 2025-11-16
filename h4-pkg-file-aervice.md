@@ -42,13 +42,15 @@ Jos config muuttuu → sshd restartataan automaattisesti (watch)
 
 Alotin tehtävän avaamalla ssh:n asennustiedoston: sudo nano /etc/ssh/sshd_config
 
-Tiedostoon lisäsin seuraavat tekstit:
+Tiedostoon lisäsin seuraavat tekstit :
 
 ![ssh](https://github.com/TuukkaMero/linux-course/blob/main/ssh%20asennustiedosto.png)
 
-seuraavaksi loin saltssh hakemiston johon loin salt tilan:
 
-![ssh.sls](https://github.com/TuukkaMero/linux-course/blob/main/ssh.sls%20sis%C3%A4lt%C3%B6.png)
+
+
+
+
 
 
 
