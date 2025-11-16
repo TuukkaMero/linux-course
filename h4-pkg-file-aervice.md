@@ -75,26 +75,42 @@ local:
           ID: openssh-server
     Function: pkg.installed
       Result: True
-     Comment: Package openssh-server is already installed
+     Comment: Package openssh-server was successfully installed
      Changes:
+              ----------
+              openssh-server:
+                  New installation
 
 ----------
           ID: /etc/ssh/sshd_config
     Function: file.managed
       Result: True
-     Comment: File /etc/ssh/sshd_config is in the correct state
+     Comment: File /etc/ssh/sshd_config was updated
      Changes:
+              ----------
+              diff:
+                  --- /etc/ssh/sshd_config
+                  +++ /etc/ssh/sshd_config
+                  @@
+                  -#Port 22
+                  +Port 22
+                  +Port 2222
+                  -#PermitRootLogin yes
+                  +PermitRootLogin no
 
 ----------
           ID: ssh
     Function: service.running
       Result: True
-     Comment: Service ssh is running
+     Comment: Service ssh was started
      Changes:
+              ----------
+              ssh:
+                  Started
 
 Summary for local
 -------------
-Succeeded: 3 (unchanged=3)
+Succeeded: 3
 Failed:    0
 -------------
  Tilani korjasi puutteet joten idempotenssi on saavutettu
